@@ -19,6 +19,14 @@
   
 </head>
 <body>
+  <span style="display: block; width: 100px; text-align: center; color: white; size: 2px;">
+    Chapter 1
+  </span>
+  <audio controls>
+    <source src="./static/Chapter_1.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  
   <div class="container">
     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 783.55 354.91">
       <g id="bongo-cat">
@@ -216,8 +224,6 @@
       </g>
     </svg>
   </div>
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
   <script src="{{ url_for('static', filename='gsap.min.js') }}"></script>
   document.addEventListener("DOMContentLoaded", (event) => {
     <script src="{{ url_for('static', filename='cat.js') }}"></script>
