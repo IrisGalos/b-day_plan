@@ -1,12 +1,8 @@
 import './static/cat.css';
 import '/workspaces/b-day_plan/main/index';
 
-console.log(document.querySelectorAll(".terminal-code line"));
 gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, TextPlugin);
 document.addEventListener('DOMContentLoaded', () => {
-
-  console.log(document.querySelectorAll(".terminal-code line"));
-
   try {
     const ID = "bongo-cat";
     const s = (selector) => `#${ID} ${selector}`;
@@ -24,12 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     };
 
-    if (!notes.length || !document.querySelector(music.note)) {
+    const musicNoteEls = document.querySelectorAll(music.note);
+
+    if (!notes.length || !musicNoteEls.length) {
       throw new Error("Required elements not found in DOM");
     }
 
     notes.forEach(note => {
-      if (note?.parentElement) {
+      if (note.parentElement) {
         note.parentElement.appendChild(note.cloneNode(true));
         note.parentElement.appendChild(note.cloneNode(true));
       }
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
 
     function initAnimations() {
-    
       gsap.set(music.note, { scale: 0, autoAlpha: 1 });
 
       const animatePawState = (selector) =>
@@ -73,15 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
         .add(animatePawState(cat.pawRight.up), "start+=0.19")
         .timeScale(1.6);
 
-      gsap.from(".terminal-code line", {
-        drawSVG: "0%",
-        duration: 0.1,
-        stagger: 0.1,
-        ease: "none",
-        repeat: -1,
+      gsap.utils.toArray(".terminal-code line").forEach(line => {
+        gsap.from(line, {
+          drawSVG: "0%",
+          duration: 0.1,
+          stagger: 0.1,
+          ease: "none",
+          repeat: -1,
+        });
       });
 
-      const noteEls = gsap.utils.shuffle([...document.querySelectorAll(music.note)]);
+      const noteEls = gsap.utils.shuffle([...musicNoteEls]);
       const groupSize = Math.floor(noteEls.length / 3);
       const [notesG1, notesG2, notesG3] = [
         noteEls.slice(0, groupSize),

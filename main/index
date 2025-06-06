@@ -5,7 +5,6 @@
   <title>B-day plan 2.0</title>
   <link rel="stylesheet" href="./static/cat.css">
   <link rel="stylesheet" href="./static/cat.js">
-  <script src="gsap.min.js"></script>
   
   <script>
     gsap.registerPlugin(DrawSVGPlugin);
@@ -219,7 +218,6 @@
   </div>
   
   <script src="{{ url_for('static', filename='gsap.min.js') }}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   document.addEventListener("DOMContentLoaded", (event) => {
     <script src="{{ url_for('static', filename='cat.js') }}"></script>
   });
