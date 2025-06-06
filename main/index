@@ -216,7 +216,8 @@
       </g>
     </svg>
   </div>
-  
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
   <script src="{{ url_for('static', filename='gsap.min.js') }}"></script>
   document.addEventListener("DOMContentLoaded", (event) => {
     <script src="{{ url_for('static', filename='cat.js') }}"></script>
