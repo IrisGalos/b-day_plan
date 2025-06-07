@@ -10,10 +10,67 @@ body {
   height: 100vh;
   width: 100vw;
   background: var(--bg);
-  display: flex;
+  display: box;
   place-content: center;
   align-items: flex-end;
-  overflow: hidden;
+  overflow: auto;
+}
+
+.fireworks-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+#fireworks-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.title-block {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px #ffffffcc;
+}
+
+.title-block h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #a5ea9b;
+}
+
+.title-block h2 {
+  font-size: 2.5rem;
+  font-style: italic;
+  color: #ffcc81;
+}
+
+.title-block h3 {
+  font-size: 1.2rem;
+  color: #7ed1e2;
+  margin-bottom: 80px; 
+}
+
+.recording-frame::before {
+  content: '';
+  display: block;
+  height: 10px;
+  width: 100px;
+  background: repeating-linear-gradient(
+    45deg,
+    #a5ea9b,
+    #ff61d8 10px,
+    #569cfa 10px,
+    #7ed1e2 10px,
+    #ffcc81 20px
+  );
+  margin: 0 auto 10px;
+  border-radius: 20px;
 }
 .container {
   width: 80vw;

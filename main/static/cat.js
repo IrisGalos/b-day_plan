@@ -129,3 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error("Animation error:", error);
   }
 });
+
+gsap.to("#cat-wrapper", {
+  y: -20,
+  duration: 1,
+  yoyo: true,
+  repeat: -1,
+  ease: "sine.inOut"
+});
