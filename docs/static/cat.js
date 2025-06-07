@@ -1,5 +1,5 @@
 import './static/cat.css';
-import '/workspaces/b-day_plan/main/index';
+import '/workspaces/b-day_plan/docs/index';
 
 gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, TextPlugin);
 document.addEventListener('DOMContentLoaded', () => {
