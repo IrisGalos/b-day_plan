@@ -224,6 +224,7 @@
       </g>
     </svg>
   </div>
+
   <script src="{{ url_for('static', filename='gsap.min.js') }}"></script>
   document.addEventListener("DOMContentLoaded", (event) => {
     <script src="{{ url_for('static', filename='cat.js') }}"></script>
